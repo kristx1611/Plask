@@ -1,3 +1,6 @@
+The original repository is a private repository made for a course project.
+Below is the original README.
+
 # IN2000 software engineering project
 Our android application is based on [Case 1 – Badetemperatur](https://www.uio.no/studier/emner/matnat/ifi/IN2000/v21/case/in2000-cases-v21.pdf).
 ### Team 21
