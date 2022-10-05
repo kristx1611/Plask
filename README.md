@@ -1,4 +1,7 @@
 The original repository is a private repository made for a course project.
+This project lasted throughout the whole semester, approximately March - May 2021.
+The base requirement was to make an android application where the user could see the live temperature of different Norwegian beaches.
+Features I worked on were: Weather and water temperature, map location of beaches, distance to beaches, favorite beaches, search and filter, information about the specific beach, live map and user location and the ui elements to represent these features.
 Below is the original README.
 
 # IN2000 software engineering project
