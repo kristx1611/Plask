@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/navigation_home_beach_overview_fragment">
+
+    <fragment
+        android:id="@+id/navigation_beach_info_fragment"
+        android:name="com.hfad.team21.ui.BeachInfoFragment"
+        android:label="beach_info_fragment"
+        tools:layout="@layout/beach_info_fragment" />
+    <fragment
+        android:id="@+id/navigation_home_beach_overview_fragment"
+        android:name="com.hfad.team21.ui.HomeBeachOverviewFragment"
+        android:label="HomeBeachOverviewFragment" >
+        <action
+            android:id="@+id/action_navigation_home_beach_overview_fragment_to_navigation_beach_info_fragment"
+            app:destination="@id/navigation_beach_info_fragment" />
+    </fragment>
+</navigation>

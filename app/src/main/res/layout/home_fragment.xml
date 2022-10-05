@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeFragment">
+
+    <ImageButton
+        android:id="@+id/home_location_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="5dp"
+        app:srcCompat="@drawable/ic_baseline_my_location_24"
+        android:scaleType="center"
+        android:background="@drawable/rounded_corners"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/location_button_desc" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageButton
+        android:id="@+id/zoom_in_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/zoom_out_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/zoom_in_desc" />
+
+    <ImageButton
+        android:id="@+id/zoom_out_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/ic_baseline_remove_24"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/home_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/zoom_out_desc" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        android:theme="?attr/actionBarTheme"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/home_logo_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="5dp"
+            android:layout_gravity="start"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="#FFFFFF"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_plask"
+            android:contentDescription="@string/logo_desc" />
+
+        <ImageView
+            android:id="@+id/search_iv"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_corners"
+            android:scaleType="centerInside"
+            android:elevation="5dp"
+            app:srcCompat="@drawable/ic_baseline_search_24"
+            android:contentDescription="@string/search_beach_name" />
+
+        <Spinner
+            android:id="@+id/home_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners"
+            android:elevation="5dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:entries="@array/choose_city"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="viewEnd" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <fragment
+        android:id="@+id/home_fragment_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/home_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/rounded_corners_top"
+            android:orientation="vertical"
+            app:behavior_peekHeight="30dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <Button
+                android:id="@+id/home_btn"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/dark_grey"
+                android:bottomLeftRadius="15dp"
+                android:bottomRightRadius="15dp"
+                android:elevation="4dp"
+                android:topLeftRadius="15dp"
+                android:topRightRadius="15dp" />
+
+            <fragment
+                android:id="@+id/home_fragment_beach"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:navGraph="@navigation/home_navigation" />
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

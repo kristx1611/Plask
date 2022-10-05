@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/beach_info_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BeachInfoFragment">
+
+    <ImageView
+        android:id="@+id/beach_info_iv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="2dp"
+        android:background="@drawable/cross"
+        android:contentDescription="@string/back_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/favorite_indicator_iv"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/favorite_indicator"
+                    app:layout_constraintStart_toEndOf="@id/beach_name_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+                <TextView
+                    android:id="@+id/beach_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Beach name" />
+
+                <TextView
+                    android:id="@+id/distance_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/beach_name_tv"
+                    tools:text="2 km" />
+
+                <LinearLayout
+                    android:id="@+id/units"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/distance_tv">
+
+                    <ImageView
+                        android:id="@+id/weather_type_iv"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/weather_icon_desc"
+                        tools:src="@drawable/heavyrainshowers_day" />
+
+                    <TextView
+                        android:id="@+id/air_temp_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        tools:text="21°C" />
+
+                    <ImageView
+                        android:id="@+id/water_temp_iv"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:alpha="0.6"
+                        android:contentDescription="@string/water_icon_desc"
+                        android:textColor="@android:color/black"
+                        android:src="@drawable/sea" />
+
+                    <TextView
+                        android:id="@+id/water_temp_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        tools:text="21°C" />
+
+                    <ImageView
+                        android:id="@+id/wind_iv"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:alpha="0.6"
+                        android:contentDescription="@string/wind_icon_desc"
+                        android:textColor="@android:color/black"
+                        android:src="@drawable/wind" />
+
+                    <TextView
+                        android:id="@+id/wind_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        tools:text="2 m/s" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/beach_photo_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/beach_pic_desc"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/units" />
+
+                <TextView
+                    android:id="@+id/jetty_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/style_facilities"
+                    android:backgroundTint="#EFEFEF"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/jetty"
+                    android:textColor="#558E85"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/beach_photo_iv" />
+
+                <TextView
+                    android:id="@+id/diving_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/style_facilities"
+                    android:backgroundTint="#EFEFEF"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/diving_board"
+                    android:textColor="#558E85"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/jetty_tv"
+                    app:layout_constraintTop_toBottomOf="@id/beach_photo_iv" />
+
+                <TextView
+                    android:id="@+id/kiosk_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/style_facilities"
+                    android:backgroundTint="#EFEFEF"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/kiosk"
+                    android:textColor="#558E85"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/diving_tv"
+                    app:layout_constraintTop_toBottomOf="@id/beach_photo_iv" />
+
+                <TextView
+                    android:id="@+id/toilet_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/style_facilities"
+                    android:backgroundTint="#EFEFEF"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/toilet"
+                    android:textColor="#558E85"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/kiosk_tv"
+                    app:layout_constraintTop_toBottomOf="@id/beach_photo_iv" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/info_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="jetty_tv,diving_tv,kiosk_tv,toilet_tv" />
+
+                <TextView
+                    android:id="@+id/beach_description_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/info_barrier"
+                    tools:text="Strandbeskrivelse" />
+
+                <Button
+                    android:id="@+id/open_google_maps_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_corners"
+                    android:elevation="3dp"
+                    android:text="@string/open_google_maps"
+                    app:icon="@drawable/googlemaps"
+                    app:iconGravity="textStart"
+                    app:iconSize="25dp"
+                    app:iconTint="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/beach_description_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
